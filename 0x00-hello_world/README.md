@@ -1,1 +1,1 @@
-initial readme
+first C programming project
