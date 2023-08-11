@@ -18,6 +18,6 @@ int main(void)
 		num++;
 	}
 
-	printf('\n');
+	printf("\n");
 	return (0);
 }
