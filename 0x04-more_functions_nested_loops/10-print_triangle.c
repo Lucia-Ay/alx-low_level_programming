@@ -1,28 +1,26 @@
 #include "main.h"
 
 /**
- * print_traingle - prints a traingle
+ * print_triangle - prints a triangle
  *
  * @size: input for the size
  *
  * Return: 0 (success)
 */
 
-void print_traingle(int size)
+void print_triangle(int size)
 {
-	int h, b;
+	int row, space, hash;
 
 	if (size > 0)
 	{
-		for (h = 1; h <= size; h++)
+		for (row = 1; row <= size; row++)
 		{
-			for (b = 1; b <= size; b++)
-			{
-				if ((h + b) <= size)
-					_putchar(' ');
-				else
-					_putchar('#');
-			}
+			for (space = size - row; space >= 1; space--)
+				_putchar(' ');
+			for (hash = 1; hash <= row; hash++)
+				_putchar('#');
+			_putchar('\n');
 		}
 	}
 	else
