@@ -20,7 +20,7 @@ int isLowercase(char c)
 
 int isDelimiter(char c)
 {
-	char D[] = " \t\n,;.!?\"(){}";
+	char D[] = "\t\n ,;.!?\"(){}";
 	int i;
 
 	for (i = 0; i < 13; i++)
@@ -37,14 +37,14 @@ int isDelimiter(char c)
 
 char *cap_string(char *s)
 {
-	char *p = s;
+	char *ptr = s;
 	int delimiter = 1;
 
 	while (*s)
 	{
 		if (isDelimiter(*s))
 			delimiter = 1;
-		else if (isLower(*s) && delimiter)
+		else if (isLowercase(*s) && delimiter)
 		{
 			*s -= 32;
 			delimiter = 0;
@@ -53,5 +53,5 @@ char *cap_string(char *s)
 			delimiter = 0;
 		s++;
 	}
-	return (p);
+	return (ptr);
 }
